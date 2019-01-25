@@ -23,8 +23,8 @@ func normalizeDatas(dataTab []datas, limits Limits) (normalized []datas) {
 }
 
 type Thetas struct {
-	Zero float64 `json:"theta0"`
-	One  float64 `json:"theta1"`
+	Zero float64 `json:"theta0", csv:"theta0"`
+	One  float64 `json:"theta1", csv:"theta1"`
 }
 
 func (tmp *Thetas) train(learningRate float64, t *Thetas, normalized []datas) {
@@ -50,8 +50,8 @@ func (t *Thetas) trainLoop(learningRate float64, normalized []datas) {
 }
 
 type Limits struct {
-	Min float64 `json:"min"`
-	Max float64 `json:"max"`
+	Min float64 `json:"min", csv:"min"`
+	Max float64 `json:"max", csv:"max"`
 }
 
 func getMax(datas []datas) (max float64) {

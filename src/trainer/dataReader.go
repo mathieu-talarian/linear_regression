@@ -40,7 +40,7 @@ func retData(km, price string) *datas {
 
 func dataReader(dataset string) (ret []datas, err error) {
 	var csvFile *os.File
-	var line *[]string
+	var line []string
 	csvFile, err = os.Open(dataset)
 	if err != nil {
 		return
@@ -48,14 +48,14 @@ func dataReader(dataset string) (ret []datas, err error) {
 	defer csvFile.Close()
 	reader := csv.NewReader(csvFile)
 	for {
-		*line, err = reader.Read()
+		line, err = reader.Read()
 		if err == io.EOF {
 			err = nil
 			break
 		} else if err != nil {
 			return
 		}
-		retDt := retData((*line)[0], (*line)[1])
+		retDt := retData(line[0], line[1])
 		if retDt != nil {
 			ret = append(ret, *retDt)
 		}
