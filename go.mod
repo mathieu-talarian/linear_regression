@@ -1,4 +1,4 @@
-module "https://github.com/mathmoul/linear_regression"
+module mathmoul/linear_regression
 
 require (
 	github.com/google/pprof v0.0.0-20190108002400-985cf9b4fdd2 // indirect

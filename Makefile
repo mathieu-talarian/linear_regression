@@ -1,8 +1,8 @@
 TRAINER=trainer
 ESTIMATOR=estimator
 
-E_SRC_F=main.go
-T_SRC_F=main.go dataReader.go flags.go
+E_SRC_F=main.go flags.go
+T_SRC_F=main.go dataReader.go flags.go graph.go
 
 E_DIR=src/estimator
 T_DIR=src/trainer
