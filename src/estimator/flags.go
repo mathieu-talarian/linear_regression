@@ -18,8 +18,8 @@ func parseFlags() (err error) {
 	flag.StringVar(&f.tmpFileMinMax, "m", ".min_max.csv", "The file min max output")
 	flag.Parse()
 	global = f
-	if len(flag.Args()) != 1 {
-		return fmt.Errorf("Not enough arguments, mileage needed")
+	if len(flag.Args()) != 0 {
+		return fmt.Errorf("Too much arguments")
 	}
 	return
 }

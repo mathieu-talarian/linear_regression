@@ -14,6 +14,11 @@ func (thetas *Thetas) train(learningRate float64, t Thetas, normalized exploiata
 	thetas.One = learningRate * (float64(1) / float64(m)) * sum1
 }
 
+func (thetas *Thetas) SetZero() {
+	thetas.Zero = 0
+	thetas.One = 0
+}
+
 func TrainLoop(learningRate float64, normalized exploiatableDatas, loops int) (thetas Thetas) {
 	for i := 0; i < loops; i++ {
 		var tmp Thetas

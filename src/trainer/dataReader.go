@@ -75,10 +75,10 @@ func retData(km, price string) *data {
 	}
 }
 
-func dataReader(dataset string) (ret datas, err error) {
+func dataReader(file string) (ret datas, err error) {
 	var csvFile *os.File
 	var line []string
-	csvFile, err = os.Open(dataset)
+	csvFile, err = os.Open(file)
 	if err != nil {
 		return
 	}
